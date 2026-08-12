@@ -36,9 +36,8 @@ function initNavToggle() {
 }
 
 /**
- * Contact form: validates in the browser and shows a status message.
- * No backend is wired up yet — swap the fetch() below for a real
- * endpoint (Formspree, Netlify Forms, custom API, etc.) at launch.
+ * Contact form: validates in the browser, then submits to Formspree
+ * via fetch so the page never reloads.
  */
 function initContactForm() {
   const form = document.querySelector('#contact-form');
@@ -46,7 +45,7 @@ function initContactForm() {
 
   const status = form.querySelector('.form-status');
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!form.checkValidity()) {
@@ -56,11 +55,22 @@ function initContactForm() {
 
     setStatus('Sending...', 'success');
 
-    // Placeholder submit — replace with a real form provider or API call.
-    window.setTimeout(() => {
-      setStatus('Thank you! Your message has been sent — I’ll be in touch within 2 business days.', 'success');
-      form.reset();
-    }, 600);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        setStatus('Thank you! Your message has been sent — I’ll be in touch within 2 business days.', 'success');
+        form.reset();
+      } else {
+        setStatus('Something went wrong sending your message — please email sophia@portraitsbysophia.com directly.', 'error');
+      }
+    } catch (error) {
+      setStatus('Something went wrong sending your message — please email sophia@portraitsbysophia.com directly.', 'error');
+    }
   });
 
   function setStatus(message, type) {

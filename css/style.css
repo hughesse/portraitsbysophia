@@ -1067,12 +1067,6 @@ h1, h2, h3, h4 {
   gap: var(--space-sm);
 }
 
-.form-note {
-  font-size: 0.8rem;
-  color: var(--color-charcoal-70);
-  margin-top: var(--space-xs);
-}
-
 .form-status {
   margin-top: var(--space-sm);
   font-size: 0.9rem;
