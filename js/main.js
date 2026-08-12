@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initHeroParallax();
   initInstagramFeed();
+  initLightbox();
 });
 
 // Behold.so JSON feed URL (Embed → JSON in the Behold dashboard).
@@ -156,12 +157,13 @@ async function initInstagramFeed() {
     grid.innerHTML = posts
       .map((post) => {
         const imageUrl = post.sizes?.medium?.mediaUrl || post.mediaUrl;
+        const fullImageUrl = post.sizes?.large?.mediaUrl || post.sizes?.full?.mediaUrl || imageUrl;
         const label = (post.prunedCaption || 'View post on Instagram')
           .slice(0, 140)
           .replace(/"/g, '&quot;');
 
         return `
-          <a class="instagram-item" href="${post.permalink}" target="_blank" rel="noopener" aria-label="${label}">
+          <a class="instagram-item" href="${post.permalink}" target="_blank" rel="noopener" aria-label="${label}" data-full="${fullImageUrl}">
             <img src="${imageUrl}" alt="${label}" loading="lazy" />
           </a>
         `;
@@ -170,5 +172,58 @@ async function initInstagramFeed() {
   } catch (error) {
     // Feed unreachable — leave the static placeholder grid in place.
     console.warn('Instagram feed could not be loaded:', error);
+  }
+}
+
+/**
+ * Photo lightbox: clicking a real photo (currently just the Instagram
+ * grid, since it's the section with live images) opens it larger in
+ * an overlay instead of leaving the site. Uses event delegation so it
+ * works on the Instagram tiles even though they're added after the
+ * feed loads, and will pick up any future gallery images automatically
+ * as long as they share the same markup pattern.
+ */
+function initLightbox() {
+  const lightbox = document.querySelector('#lightbox');
+  if (!lightbox) return;
+
+  const lightboxImage = lightbox.querySelector('.lightbox-image');
+  const closeButton = lightbox.querySelector('.lightbox-close');
+  const viewLink = lightbox.querySelector('.lightbox-view-link');
+
+  document.addEventListener('click', (event) => {
+    const item = event.target.closest('.instagram-item');
+    if (!item) return;
+
+    const img = item.querySelector('img');
+    if (!img) return; // static placeholder tiles have no photo — let them link out normally
+
+    event.preventDefault();
+    lightboxImage.src = item.dataset.full || img.src;
+    lightboxImage.alt = img.alt;
+    viewLink.href = item.href;
+    openLightbox();
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLightbox();
+  });
+
+  function openLightbox() {
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 }
