@@ -1311,4 +1311,8 @@ h1, h2, h3, h4 {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  .hero-scroll-cue {
+    display: none;
+  }
 }
