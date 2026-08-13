@@ -59,12 +59,24 @@ function initContactForm() {
   prefillFromPackage(form);
 
   const status = form.querySelector('.form-status');
+  const formLoadTime = Date.now();
+  const MIN_FILL_TIME_MS = 3000;
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!form.checkValidity()) {
       form.reportValidity();
+      return;
+    }
+
+    // Bots typically fill and submit within a second or two of the page
+    // loading; real visitors take longer to read and type. Submissions
+    // that come in faster than that are quietly dropped instead of sent —
+    // shown the normal success message so nothing tips off a script.
+    if (Date.now() - formLoadTime < MIN_FILL_TIME_MS) {
+      setStatus('Thank you! Your message has been sent — I’ll be in touch within 2 business days.', 'success');
+      form.reset();
       return;
     }
 

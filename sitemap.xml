@@ -1,19 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://portraitsbysophia.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/hero/hero-main.jpg</image:loc>
+      <image:title>Bride and groom&apos;s hands with wedding rings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/about/sophia-portrait.webp</image:loc>
+      <image:title>Portrait of Sophia, wedding and graduation photographer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/wedding-engagement-cover.jpg</image:loc>
+      <image:title>Wedding and engagement photography</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/couples-cover.jpg</image:loc>
+      <image:title>Couples photography</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/graduation-cover.jpg</image:loc>
+      <image:title>Graduation photography</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/business-marketing-cover.jpg</image:loc>
+      <image:title>Business and marketing photography</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://portraitsbysophia.com/portfolio.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/wedding-engagement-01.jpg</image:loc>
+      <image:title>Wedding invitation suite with rings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/wedding-engagement-02.jpg</image:loc>
+      <image:title>Wedding bouquet detail</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/wedding-engagement-03.jpg</image:loc>
+      <image:title>Bride&apos;s dress hem detail in the grass</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/wedding-engagement-04.jpg</image:loc>
+      <image:title>Flower-decorated wedding getaway car</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/couples-01.jpg</image:loc>
+      <image:title>Couple embracing, hands on shoulders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/couples-02.jpg</image:loc>
+      <image:title>Couple running hand in hand through a field</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/couples-03.jpg</image:loc>
+      <image:title>Couple embracing in a sunlit field</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/couples-04.jpg</image:loc>
+      <image:title>Wedding party walking under string lights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/graduation-01.jpg</image:loc>
+      <image:title>Group of graduates celebrating at a campus archway</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/graduation-02.jpg</image:loc>
+      <image:title>Graduates sitting together on campus steps</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/graduation-03.jpg</image:loc>
+      <image:title>Graduate in a letterman jacket at sunset</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/graduation-04.jpg</image:loc>
+      <image:title>Graduate portrait along a riverside path</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/business-marketing-01.jpg</image:loc>
+      <image:title>Professional portrait seated indoors</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/business-marketing-02.jpg</image:loc>
+      <image:title>Professional working at a laptop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/business-marketing-03.jpg</image:loc>
+      <image:title>Individual portrait against architectural columns</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/portfolio/business-marketing-04.jpg</image:loc>
+      <image:title>Individual portrait along a riverside walkway</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://portraitsbysophia.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://portraitsbysophia.com/images/about/sophia-portrait.webp</image:loc>
+      <image:title>Portrait of Sophia, wedding and graduation photographer</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://portraitsbysophia.com/sessions.html</loc>

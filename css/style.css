@@ -118,6 +118,11 @@ h1, h2, h3, h4 {
   margin-bottom: var(--space-sm);
 }
 
+.services .section-label {
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+}
+
 .section-heading {
   font-size: clamp(2rem, 3.2vw, 2.75rem);
   margin-bottom: var(--space-sm);
@@ -147,14 +152,6 @@ h1, h2, h3, h4 {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
-}
-
-.script-accent {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.3em;
-  color: var(--color-burgundy);
-  line-height: 1;
 }
 
 /* ---- Scroll reveal ---- */
@@ -377,7 +374,7 @@ h1, h2, h3, h4 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
   gap: var(--space-lg);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -845,10 +842,16 @@ h1, h2, h3, h4 {
 /* ---- Final CTA banner ----------------------------------------------------------- */
 .cta-banner {
   position: relative;
-  background-color: var(--color-wine);
+  background-color: var(--color-olive);
   color: var(--color-white);
   text-align: center;
   overflow: hidden;
+}
+
+.cta-banner .btn-outline-light:hover {
+  background-color: var(--color-blush);
+  border-color: var(--color-blush);
+  color: var(--color-charcoal);
 }
 
 .cta-banner::before {
@@ -861,13 +864,6 @@ h1, h2, h3, h4 {
   background: radial-gradient(circle, rgba(211, 165, 165, 0.22) 0%, transparent 68%);
   transform: translate(-50%, -50%);
   pointer-events: none;
-}
-
-.cta-banner .script-accent {
-  display: block;
-  font-size: 1.75rem;
-  margin-bottom: var(--space-xs);
-  color: var(--color-blush);
 }
 
 .cta-banner .section-heading {
@@ -896,6 +892,25 @@ h1, h2, h3, h4 {
 
 .page-hero .section-intro a {
   color: var(--color-burgundy);
+  text-decoration: underline;
+}
+
+.portfolio-hero,
+.sessions-hero {
+  background-color: var(--color-olive);
+  color: var(--color-white);
+}
+
+.sessions-hero .section-label {
+  color: var(--color-blush);
+}
+
+.sessions-hero .section-intro {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sessions-hero .section-intro a {
+  color: var(--color-blush);
   text-decoration: underline;
 }
 
@@ -942,6 +957,15 @@ h1, h2, h3, h4 {
 
 .pricing-section--alt {
   background-color: var(--color-beige-soft);
+}
+
+.pricing-section--olive {
+  background-color: var(--color-olive);
+  color: var(--color-white);
+}
+
+.pricing-section--olive .section-label {
+  color: var(--color-blush);
 }
 
 .pricing-grid {
@@ -1038,22 +1062,23 @@ h1, h2, h3, h4 {
   background-color: var(--color-beige-soft);
 }
 
+.portfolio-category .section-heading {
+  font-size: 1.5rem;
+}
+
 .portfolio-category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
+  columns: 2;
+  column-gap: var(--space-md);
   margin-top: var(--space-lg);
-}
-
-.portfolio-category-grid .img-placeholder,
-.portfolio-category-grid img {
-  aspect-ratio: 4 / 5;
-  border-radius: 2px;
+  text-align: left;
 }
 
 .portfolio-category-grid img {
+  display: block;
   width: 100%;
-  object-fit: cover;
+  margin-bottom: var(--space-md);
+  border-radius: 2px;
+  break-inside: avoid;
 }
 
 /* ---- Lightbox --------------------------------------------------------------------- */
@@ -1257,7 +1282,7 @@ h1, h2, h3, h4 {
   }
 
   .portfolio-category-grid {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 
   .instagram-grid {
