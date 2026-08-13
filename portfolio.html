@@ -16,6 +16,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PhotographyBusiness",
+    "name": "Portraits by Sophia",
+    "image": "https://portraitsbysophia.com/images/hero/hero-main.jpg",
+    "url": "https://portraitsbysophia.com/",
+    "telephone": "+15134291444",
+    "email": "sophia@portraitsbysophia.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Louisville",
+      "addressRegion": "KY",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://instagram.com/sophia.e.portraits",
+      "https://www.linkedin.com/in/sophia-hughes-059417199/"
+    ],
+    "description": "Warm, romantic, light-filled photography for weddings, couples, and graduates. Based in Louisville, KY."
+  }
+  </script>
 </head>
 <body>
 
@@ -23,9 +46,8 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html" class="nav-logo nav-logo--header">
         Portraits by Sophia
-        <span>Photography</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -48,15 +70,55 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <span class="section-label">Portfolio</span>
-        <h1 class="section-heading">Weddings, Couples &amp; Graduates</h1>
-        <p class="section-intro">A curated look at recent sessions — full galleries coming soon.</p>
+        <h1 class="section-heading">My Most Recent Work</h1>
       </div>
     </section>
 
-    <section class="coming-soon">
+    <section class="portfolio-category" id="wedding-engagement">
       <div class="container">
-        <p>The full portfolio gallery is being built next. Check back soon.</p>
+        <h2 class="section-heading">Wedding and Engagement</h2>
+        <div class="portfolio-category-grid">
+          <img src="images/portfolio/wedding-engagement-01.jpg" alt="Wedding invitation suite with rings" loading="lazy" />
+          <img src="images/portfolio/wedding-engagement-02.jpg" alt="Wedding bouquet detail" loading="lazy" />
+          <img src="images/portfolio/wedding-engagement-03.jpg" alt="Bride's dress hem detail in the grass" loading="lazy" />
+          <img src="images/portfolio/wedding-engagement-04.jpg" alt="Flower-decorated wedding getaway car" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-category portfolio-category--alt" id="couples">
+      <div class="container">
+        <h2 class="section-heading">Couples</h2>
+        <div class="portfolio-category-grid">
+          <img src="images/portfolio/couples-01.jpg" alt="Couple embracing, hands on shoulders" loading="lazy" />
+          <img src="images/portfolio/couples-02.jpg" alt="Couple running hand in hand through a field" loading="lazy" />
+          <img src="images/portfolio/couples-03.jpg" alt="Couple embracing in a sunlit field" loading="lazy" />
+          <img src="images/portfolio/couples-04.jpg" alt="Wedding party walking under string lights" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-category" id="graduation">
+      <div class="container">
+        <h2 class="section-heading">Graduation</h2>
+        <div class="portfolio-category-grid">
+          <img src="images/portfolio/graduation-01.jpg" alt="Group of graduates celebrating at a campus archway" loading="lazy" />
+          <img src="images/portfolio/graduation-02.jpg" alt="Graduates sitting together on campus steps" loading="lazy" />
+          <img src="images/portfolio/graduation-03.jpg" alt="Graduate in a letterman jacket at sunset" loading="lazy" />
+          <img src="images/portfolio/graduation-04.jpg" alt="Graduate portrait along a riverside path" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-category portfolio-category--alt" id="business-marketing">
+      <div class="container">
+        <h2 class="section-heading">Business Marketing</h2>
+        <div class="portfolio-category-grid">
+          <img src="images/portfolio/business-marketing-01.jpg" alt="Professional portrait seated indoors" loading="lazy" />
+          <img src="images/portfolio/business-marketing-02.jpg" alt="Professional working at a laptop" loading="lazy" />
+          <img src="images/portfolio/business-marketing-03.jpg" alt="Individual portrait against architectural columns" loading="lazy" />
+          <img src="images/portfolio/business-marketing-04.jpg" alt="Individual portrait along a riverside walkway" loading="lazy" />
+        </div>
       </div>
     </section>
   </main>

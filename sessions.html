@@ -16,6 +16,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PhotographyBusiness",
+    "name": "Portraits by Sophia",
+    "image": "https://portraitsbysophia.com/images/hero/hero-main.jpg",
+    "url": "https://portraitsbysophia.com/",
+    "telephone": "+15134291444",
+    "email": "sophia@portraitsbysophia.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Louisville",
+      "addressRegion": "KY",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://instagram.com/sophia.e.portraits",
+      "https://www.linkedin.com/in/sophia-hughes-059417199/"
+    ],
+    "description": "Warm, romantic, light-filled photography for weddings, couples, and graduates. Based in Louisville, KY."
+  }
+  </script>
 </head>
 <body>
 
@@ -23,9 +46,8 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html" class="nav-logo nav-logo--header">
         Portraits by Sophia
-        <span>Photography</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -50,13 +72,131 @@
       <div class="container">
         <span class="section-label">Sessions &amp; Pricing</span>
         <h1 class="section-heading">Investment &amp; Packages</h1>
-        <p class="section-intro">Wedding collections and session pricing details coming soon. Note: online payments and deposits will be added in a later phase.</p>
+        <p class="section-intro">A look at collections and session pricing, so you know exactly what to expect. Have questions or want something custom? <a href="contact.html">Reach out</a> — I'm happy to help.</p>
       </div>
     </section>
 
-    <section class="coming-soon">
+    <section class="section pricing-section">
       <div class="container">
-        <p>This page is being built next. Check back soon.</p>
+        <div class="section-header reveal">
+          <span class="section-label">Weddings</span>
+          <h2 class="section-heading">Wedding Packages</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <span class="pricing-tier">Bronze</span>
+            <span class="pricing-price">$800</span>
+            <ul class="pricing-features">
+              <li>Four hours of wedding coverage</li>
+              <li>One client meeting — coffee's on me!</li>
+              <li>Discounted 1-hour engagement shoot ($200)</li>
+              <li>Personal digital gallery</li>
+            </ul>
+            <a href="contact.html?type=wedding&amp;package=Bronze" class="btn btn-outline">Inquire</a>
+          </div>
+
+          <div class="pricing-card reveal reveal-delay-1">
+            <span class="pricing-tier">Silver</span>
+            <span class="pricing-price">$1,200</span>
+            <ul class="pricing-features">
+              <li>Eight hours of wedding coverage</li>
+              <li>One client meeting — coffee or Zoom, whichever's easiest</li>
+              <li>Discounted 1-hour engagement shoot ($200)</li>
+              <li>Personal digital gallery</li>
+            </ul>
+            <a href="contact.html?type=wedding&amp;package=Silver" class="btn btn-outline">Inquire</a>
+          </div>
+
+          <div class="pricing-card pricing-card--featured reveal reveal-delay-2">
+            <span class="pricing-badge">Most Popular</span>
+            <span class="pricing-tier">Gold</span>
+            <span class="pricing-price">$2,000</span>
+            <ul class="pricing-features">
+              <li>Ten hours of wedding coverage</li>
+              <li>One client meeting — coffee or Zoom, whichever's easiest</li>
+              <li>Free 1-hour engagement shoot (deposit due before session)</li>
+              <li>Personal digital gallery</li>
+            </ul>
+            <a href="contact.html?type=wedding&amp;package=Gold" class="btn btn-primary">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section pricing-section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Seniors &amp; Grads</span>
+          <h2 class="section-heading">Senior &amp; Graduation Packages</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <span class="pricing-tier">Mini Session</span>
+            <span class="pricing-price">$175</span>
+            <ul class="pricing-features">
+              <li>1 location</li>
+              <li>1 outfit</li>
+              <li>Personal digital gallery (45–50 images)</li>
+            </ul>
+            <a href="contact.html?type=graduation&amp;package=Mini%20Session" class="btn btn-outline">Inquire</a>
+          </div>
+
+          <div class="pricing-card reveal reveal-delay-1">
+            <span class="pricing-tier">Classic</span>
+            <span class="pricing-price">$300</span>
+            <ul class="pricing-features">
+              <li>2 locations</li>
+              <li>2 outfits</li>
+              <li>Personal digital gallery (55–75 images)</li>
+            </ul>
+            <a href="contact.html?type=graduation&amp;package=Classic" class="btn btn-outline">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">More Sessions</span>
+          <h2 class="section-heading">Family, Couples &amp; Business</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card reveal">
+            <span class="pricing-tier">Family Portraits</span>
+            <span class="pricing-price">$450</span>
+            <ul class="pricing-features">
+              <li>1 location</li>
+              <li>Personal digital gallery</li>
+              <li>Flexible timing — extra time can be added if needed</li>
+            </ul>
+            <a href="contact.html?type=family&amp;package=Family%20Portraits" class="btn btn-outline">Inquire</a>
+          </div>
+
+          <div class="pricing-card reveal reveal-delay-1">
+            <span class="pricing-tier">Couples &amp; Engagement</span>
+            <span class="pricing-price">$250</span>
+            <ul class="pricing-features">
+              <li>1.5 hours</li>
+              <li>1 location</li>
+              <li>Personal digital gallery</li>
+            </ul>
+            <a href="contact.html?type=engagement&amp;package=Couples%20%26%20Engagement" class="btn btn-outline">Inquire</a>
+          </div>
+
+          <div class="pricing-card reveal reveal-delay-2">
+            <span class="pricing-tier">Business Marketing</span>
+            <span class="pricing-price">$250+</span>
+            <ul class="pricing-features">
+              <li>Personal digital gallery</li>
+              <li>Message me for further details</li>
+            </ul>
+            <a href="contact.html?type=business&amp;package=Business%20Marketing" class="btn btn-outline">Inquire</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>

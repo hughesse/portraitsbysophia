@@ -16,6 +16,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PhotographyBusiness",
+    "name": "Portraits by Sophia",
+    "image": "https://portraitsbysophia.com/images/hero/hero-main.jpg",
+    "url": "https://portraitsbysophia.com/",
+    "telephone": "+15134291444",
+    "email": "sophia@portraitsbysophia.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Louisville",
+      "addressRegion": "KY",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://instagram.com/sophia.e.portraits",
+      "https://www.linkedin.com/in/sophia-hughes-059417199/"
+    ],
+    "description": "Warm, romantic, light-filled photography for weddings, couples, and graduates. Based in Louisville, KY."
+  }
+  </script>
 </head>
 <body>
 
@@ -24,9 +47,8 @@
   <!-- ============ Header / Nav ============ -->
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html" class="nav-logo nav-logo--header">
         Portraits by Sophia
-        <span>Photography</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -55,9 +77,8 @@
       </div>
 
       <div class="container hero-content">
-        <span class="hero-badge"><span class="dot"></span> Now Booking 2026</span>
-        <span class="hero-eyebrow reveal">Weddings &amp; Couples · Graduations &amp; Milestones</span>
-        <h1 class="hero-title reveal reveal-delay-1">Timeless Portraits, <em>Warmly</em> Told</h1>
+        <span class="hero-eyebrow reveal">Weddings · Couples · Graduations · Milestones</span>
+        <h1 class="hero-title reveal reveal-delay-1">Every photo, a piece of your <em>story</em></h1>
         <p class="hero-subtitle reveal reveal-delay-2">
           Light-filled, romantic photography for the moments worth remembering —
           your wedding day, your love story, your walk across the stage.
@@ -104,97 +125,33 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">What I Shoot</span>
-          <h2 class="section-heading">Two Kinds of Beginnings</h2>
           <p class="section-intro">
-            Whether you're saying "I do" or walking across the stage, I'm here to
-            capture it with warmth, care, and a light touch.
+            No matter the stage of life, I am here to capture your moment with ease.
+            My images feature a natural and bright touch that brings a sense of
+            warmth through each frame.
           </p>
         </div>
 
         <div class="services-grid">
-          <a class="service-card reveal" href="portfolio.html">
-            <span class="service-card-tag">Est. in Love</span>
-            <div class="img-placeholder" role="img" aria-label="Bride and groom embracing outdoors">
-              <span><!-- Replace with photo: images/portfolio/wedding-cover.jpg --></span>
-            </div>
-            <div class="service-card-content">
-              <span class="section-label">Weddings &amp; Couples</span>
-              <h3>Weddings &amp; Couples</h3>
-              <p>Engagements, elopements, and full wedding-day coverage, told with romance and ease.</p>
-              <span class="service-card-link">View Weddings →</span>
-            </div>
+          <a class="service-card reveal" href="portfolio.html#wedding-engagement">
+            <img src="images/portfolio/wedding-engagement-cover.jpg" alt="Wedding and engagement photography" loading="lazy" />
+            <span class="service-card-title">Wedding and Engagement</span>
           </a>
 
-          <a class="service-card reveal reveal-delay-2" href="portfolio.html">
-            <span class="service-card-tag">Cap &amp; Gown</span>
-            <div class="img-placeholder" role="img" aria-label="Graduate celebrating in cap and gown">
-              <span><!-- Replace with photo: images/portfolio/grad-cover.jpg --></span>
-            </div>
-            <div class="service-card-content">
-              <span class="section-label">Graduations &amp; Events</span>
-              <h3>Graduations &amp; Events</h3>
-              <p>Senior portraits, cap-and-gown sessions, and milestone celebrations worth framing.</p>
-              <span class="service-card-link">View Graduations →</span>
-            </div>
+          <a class="service-card reveal reveal-delay-1" href="portfolio.html#couples">
+            <img src="images/portfolio/couples-cover.jpg" alt="Couples photography" loading="lazy" />
+            <span class="service-card-title">Couples</span>
           </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ============ Featured Portfolio ============ -->
-    <section class="section featured">
-      <div class="container">
-        <div class="featured-header reveal">
-          <div>
-            <span class="section-label">Recent Work</span>
-            <h2 class="section-heading">From the Portfolio</h2>
-          </div>
-        </div>
+          <a class="service-card reveal reveal-delay-2" href="portfolio.html#graduation">
+            <img src="images/portfolio/graduation-cover.jpg" alt="Graduation photography" loading="lazy" />
+            <span class="service-card-title">Graduation</span>
+          </a>
 
-        <div class="featured-grid">
-          <a href="portfolio.html" class="reveal">
-            <div class="img-placeholder featured-item" role="img" aria-label="Featured portrait 1">
-              <span><!-- images/portfolio/featured-01.jpg --></span>
-            </div>
+          <a class="service-card reveal reveal-delay-3" href="portfolio.html#business-marketing">
+            <img src="images/portfolio/business-marketing-cover.jpg" alt="Business and marketing photography" loading="lazy" />
+            <span class="service-card-title">Business Marketing</span>
           </a>
-          <a href="portfolio.html" class="reveal reveal-delay-1">
-            <div class="img-placeholder featured-item" role="img" aria-label="Featured portrait 2">
-              <span><!-- images/portfolio/featured-02.jpg --></span>
-            </div>
-          </a>
-          <a href="portfolio.html" class="reveal reveal-delay-2">
-            <div class="img-placeholder featured-item" role="img" aria-label="Featured portrait 3">
-              <span><!-- images/portfolio/featured-03.jpg --></span>
-            </div>
-          </a>
-          <a href="portfolio.html" class="reveal reveal-delay-1">
-            <div class="img-placeholder featured-item" role="img" aria-label="Featured portrait 4">
-              <span><!-- images/portfolio/featured-04.jpg --></span>
-            </div>
-          </a>
-          <a href="portfolio.html" class="reveal reveal-delay-3">
-            <div class="img-placeholder featured-item" role="img" aria-label="Featured portrait 5">
-              <span><!-- images/portfolio/featured-05.jpg --></span>
-            </div>
-          </a>
-        </div>
-
-        <div class="featured-cta reveal">
-          <a href="portfolio.html" class="btn btn-outline">See Full Portfolio</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Testimonial ============ -->
-    <section class="section testimonial">
-      <div class="container reveal">
-        <span class="testimonial-mark" aria-hidden="true">&rdquo;</span>
-        <p class="testimonial-quote">Sophia made us feel so comfortable that we forgot the camera was even there. Our wedding photos feel like us — warm, joyful, and completely real.</p>
-        <p class="testimonial-attribution">Maya &amp; Daniel</p>
-        <div class="testimonial-dots">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
         </div>
       </div>
     </section>

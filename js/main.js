@@ -9,6 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
 });
 
+// Re-jump to a URL hash target once everything (fonts, images) has
+// fully loaded — the browser's automatic anchor scroll can undershoot
+// if web fonts load late and the page grows taller afterward.
+window.addEventListener('load', () => {
+  if (!window.location.hash) return;
+
+  const target = document.querySelector(window.location.hash);
+  if (target) {
+    target.scrollIntoView({ behavior: 'instant' });
+  }
+});
+
 // Behold.so JSON feed URL (Embed → JSON in the Behold dashboard).
 // Leave blank to keep the static placeholder grid.
 const BEHOLD_FEED_URL = 'https://feeds.behold.so/H16wLZy1miZOlnRw9Btb';
@@ -43,6 +55,8 @@ function initNavToggle() {
 function initContactForm() {
   const form = document.querySelector('#contact-form');
   if (!form) return;
+
+  prefillFromPackage(form);
 
   const status = form.querySelector('.form-status');
 
@@ -79,6 +93,28 @@ function initContactForm() {
     status.textContent = message;
     status.classList.remove('success', 'error');
     status.classList.add('visible', type);
+  }
+}
+
+/**
+ * Pre-fills the contact form from ?type= and ?package= URL params, so the
+ * "Inquire" buttons on the pricing page can hand off the session type and
+ * package the visitor already picked instead of starting from a blank form.
+ */
+function prefillFromPackage(form) {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const packageName = params.get('package');
+
+  if (type) {
+    const select = form.querySelector('#session-type');
+    const matchesOption = select && Array.from(select.options).some((option) => option.value === type);
+    if (matchesOption) select.value = type;
+  }
+
+  if (packageName) {
+    const message = form.querySelector('#message');
+    if (message) message.value = `I'm interested in the ${packageName} package. `;
   }
 }
 
