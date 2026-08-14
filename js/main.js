@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initInstagramFeed();
   initLightbox();
+  initPortfolioLightbox();
 });
 
 // Re-jump to a URL hash target once everything (fonts, images) has
@@ -136,7 +137,7 @@ function prefillFromPackage(form) {
  * isn't available, and respects prefers-reduced-motion via CSS.
  */
 function initScrollReveal() {
-  const targets = document.querySelectorAll('.reveal');
+  const targets = document.querySelectorAll('.reveal, .reveal-scale');
   if (!targets.length) return;
 
   if (!('IntersectionObserver' in window)) {
@@ -273,5 +274,89 @@ function initLightbox() {
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+  }
+}
+
+/**
+ * Full-screen portfolio viewer: clicking any photo in a portfolio
+ * category grid opens a full-bleed lightbox that can step through every
+ * photo on the page in order — arrow buttons, keyboard ← →, or a swipe
+ * on touch devices — so browsing the actual work feels like flipping
+ * through a book instead of scanning a grid.
+ */
+function initPortfolioLightbox() {
+  const lightbox = document.querySelector('#portfolio-lightbox');
+  if (!lightbox) return;
+
+  const images = Array.from(document.querySelectorAll('.portfolio-category-grid img'));
+  if (!images.length) return;
+
+  const lightboxImage = lightbox.querySelector('.lightbox-image');
+  const closeButton = lightbox.querySelector('.lightbox-close');
+  const prevButton = lightbox.querySelector('.portfolio-lightbox-prev');
+  const nextButton = lightbox.querySelector('.portfolio-lightbox-next');
+  const counter = lightbox.querySelector('.portfolio-lightbox-counter');
+
+  let currentIndex = 0;
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  closeButton.addEventListener('click', closeLightbox);
+  nextButton.addEventListener('click', showNext);
+  prevButton.addEventListener('click', showPrev);
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowRight') showNext();
+    if (event.key === 'ArrowLeft') showPrev();
+  });
+
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (event) => {
+    const delta = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) < 50) return;
+    delta > 0 ? showPrev() : showNext();
+  }, { passive: true });
+
+  function openLightbox(index) {
+    currentIndex = index;
+    renderImage();
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    renderImage();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    renderImage();
+  }
+
+  function renderImage() {
+    const img = images[currentIndex];
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
   }
 }
