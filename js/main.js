@@ -8,7 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initInstagramFeed();
   initLightbox();
   initPortfolioLightbox();
+  initImageProtection();
 });
+
+// Deterrent only — an image rendered in a browser can always be saved by a
+// determined visitor (dev tools, screenshots). This just blocks the casual
+// right-click-save / drag-to-desktop path.
+function initImageProtection() {
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+}
 
 // Re-jump to a URL hash target once everything (fonts, images) has
 // fully loaded — the browser's automatic anchor scroll can undershoot
